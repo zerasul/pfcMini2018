@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <flow name="orchestationFlow">
+        <vm:inbound-endpoint exchange-pattern="request-response" address="vm://orchestation" doc:name="VM"/>
+        <echo-component doc:name="Echo"/>
+        <choice doc:name="Choice">
+            <when expression="#[payload.request.backend == 'PRODUCTS']">
+                <vm:outbound-endpoint exchange-pattern="request-response" address="vm://products" doc:name="Products"/>
+            </when>
+            <when expression="#[payload.request.backend == 'CLIENTS']">
+                <vm:outbound-endpoint exchange-pattern="request-response" address="vm://clients" doc:name="Clients"/>
+            </when>
+            <when expression="#[payload.request.backend == 'SALES']">
+                <vm:outbound-endpoint exchange-pattern="request-response" address="vm://sales" doc:name="Sales"/>
+            </when>
+            <when expression="#[payload.request.backend == 'IOT']">
+                <vm:outbound-endpoint exchange-pattern="request-response" address="vm://iot" doc:name="IOT"/>
+            </when>
+        </choice>
+    </flow>
+</mule>

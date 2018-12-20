@@ -1,0 +1,8 @@
+.mule
+.metadata
+**/bin
+**/.project
+**/.classpath
+studio_id.xml
+**/target
+**/.idea

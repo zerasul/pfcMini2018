@@ -1,0 +1,5 @@
+{"products": [
+  {"ref": "1", "name": "Bike", "pize":  100.00},
+  {"ref": "2", "name": "Camera", "prize":  500.00},
+  {"ref": "3", "name": "Computer", "prize":  1500.00}
+]}
