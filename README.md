@@ -12,3 +12,5 @@ Para poder compilar este ejemplo, es necesario utilizar Maven. Esto generará la
 
 ```mvn install```
 
+
+Para más información por favor consule la [Wiki](https://github.com/zerasul/pfcMini2018/wiki) de este proyecto
