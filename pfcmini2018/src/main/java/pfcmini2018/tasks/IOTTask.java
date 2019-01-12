@@ -9,7 +9,7 @@ public class IOTTask implements Task {
 	
 	@Override
 	public Response makeAction(Response response) {
-		connector = new IotConnector("http://192.168.4.1:8081/");
+		connector = new IotConnector("http://blask.pythonanywhere.com/");
 		String sufix = (String) response.getRequest().getParameters().get("LIGTH");
 		String resp = connector.turnOnOff(sufix);
 		response.setJsonresponse(resp);

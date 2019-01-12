@@ -10,7 +10,7 @@ public class SalesTask implements Task {
 	private SalesConnector conector;
 	
 	public SalesTask() {
-	 this.conector= new SalesConnector("http://192.168.4.1:8081/sales");
+	 this.conector= new SalesConnector("http://blask.pythonanywhere.com/sales");
 	}
 	@Override
 	public Response makeAction(Response response) {

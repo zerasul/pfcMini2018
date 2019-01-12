@@ -10,7 +10,7 @@ public class ProductsTask implements Task {
 	private ProductConnector connector;
 	
 	public ProductsTask() {
-		this.connector= new ProductConnector("http://192.168.4.1:8081/products");
+		this.connector= new ProductConnector("http://blask.pythonanywhere.com/products");
 	}
 
 	@Override

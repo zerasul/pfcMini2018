@@ -13,7 +13,7 @@ public class ClientTask implements Task {
 	
 	public ClientTask() {
 		try {
-			this.conector= new ClientsConnector("http://192.168.4.1:8081/clients");
+			this.conector= new ClientsConnector("http://blask.pythonanywhere.com/clients");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
